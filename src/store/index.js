@@ -24,4 +24,22 @@ export const mutations = {
 }
 
 export const actions = {
+  async Req ({ dispatch, commit, state }, params) {
+    switch (params.action) {
+      case 'signIn':
+        break
+      case 'signOut':
+        break
+      case 'productLoad':
+        break
+      case 'productGet':
+        break
+      case 'productSave':
+        break
+      case 'productUpdate':
+        break
+      case 'productDelete':
+        break
+    }
+  }
 }
