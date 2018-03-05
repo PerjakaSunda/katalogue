@@ -21,8 +21,8 @@ export const state = () => ({
   },
   user: {
     auth: false,
-    email: 'admin@dot.co.id',
-    password: 'dot.admin'
+    email: '',
+    password: ''
   }
 })
 
