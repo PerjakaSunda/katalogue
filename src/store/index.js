@@ -47,6 +47,7 @@ export const actions = {
   async Req ({ dispatch, commit, state }, params) {
     switch (params.action) {
       case 'firstLoad':
+        commit('Loading')
         await firebase.auth().onAuthStateChanged(function (user) {
           if (user) {
             commit('Auth', 1)
@@ -54,17 +55,21 @@ export const actions = {
           } else {
             commit('Auth', 0)
           }
+          commit('Loading', 'hide')
         })
         break
       case 'signIn':
+        commit('Loading')
         let resLog = {}
         await firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
           function (user) {
             commit('Auth', 1)
+            commit('Loading', 'hide')
             resLog = { status: true, message: '' }
           },
           function (err) {
             commit('Auth', 0)
+            commit('Loading', 'hide')
             if (err.code === 'auth/user-not-found') {
               resLog = { status: false, message: 'User not found.' }
             } else {
@@ -74,9 +79,11 @@ export const actions = {
         )
         return resLog
       case 'signOut':
+        commit('Loading')
         await firebase.auth().signOut().then(() => {
           commit('Auth', 0)
           router.replace({name: 'Home'})
+          commit('Loading', 'hide')
         })
         break
       case 'productLoad':
