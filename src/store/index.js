@@ -50,16 +50,18 @@ export const actions = {
         let authenticated = await firebase.auth().currentUser
         return authenticated
       case 'signIn':
+        let resLog = {}
         await firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
           function (user) {
             commit('Auth', 1)
+            resLog = {status: true, message: ''}
           },
           function (err) {
             commit('Auth', 0)
-            console.log(err)
+            resLog = {status: false, message: err.message}
           }
         )
-        break
+        return resLog
       case 'signOut':
         await firebase.auth().signOut().then(() => {
           commit('Auth', 0)

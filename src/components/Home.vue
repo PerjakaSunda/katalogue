@@ -8,6 +8,7 @@
             type="text"
             placeholder="Username"
             class="input"
+            v-model="$store.state.user.email"
             required
             autofocus
             @keyup.enter="goSignIn()"
@@ -16,6 +17,7 @@
             type="password"
             placeholder="Password"
             class="input"
+            v-model="$store.state.user.password"
             required
             @keyup.enter="goSignIn()"
           >
@@ -40,7 +42,20 @@ export default {
   },
   methods: {
     goSignIn () {
-      this.$router.push({name: 'Dashboard'})
+      const _self = this
+      if (_self.$store.state.user.email === '') {
+        alert('Email is empty')
+      } else if (_self.$store.state.user.password === '') {
+        alert('Password is empty')
+      } else {
+        _self.$store.dispatch('Req', { action: 'signIn' }).then(function (res) {
+          if (res.status) {
+            _self.$router.replace({ name: 'Dashboard' })
+          } else {
+            alert(res.message)
+          }
+        })
+      }
     }
   }
 }
