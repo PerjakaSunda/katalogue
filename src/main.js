@@ -6,6 +6,7 @@ import router from './router'
 import Vuex from 'vuex'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import { firebase } from './firebase/index.js'
 
 import './assets/css/style.css'
 
@@ -26,6 +27,10 @@ new Vue({
   template: '<App/>',
   created () {
     const _self = this
+    const products = firebase.database().ref('products')
+    products.on('value', function (snapshot) {
+      _self.$store.state.products = snapshot.val()
+    })
     _self.$store.dispatch('Req', { action: 'firstLoad' })
   }
 })

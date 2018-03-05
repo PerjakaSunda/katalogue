@@ -20,63 +20,24 @@
           Add New
         </div>
 
-          <div class="clearfix"></div>
+        <div class="clearfix"></div>
 
       </div>
       <div class="inner-dashboard-main">
         <div class="dashboard-content">
-          <div class="product-item">
+          <div
+            class="product-item"
+            v-for="(product, index) in $store.state.products"
+            :key="index">
             <div class="product-content">
-              <div class="image b100"></div>
+              <div class="image b100" :style="{'background-image': 'url(' + product.image + ')'}"></div>
               <div class="clearfix"></div>
               <div class="content">
                 <div class="title">
-                  Para Mocup Suede
+                  {{ product.nama }}
                 </div>
                 <div class="price">
-                  IDR 250,000
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product-item">
-            <div class="product-content">
-              <div class="image b100"></div>
-              <div class="clearfix"></div>
-              <div class="content">
-                <div class="title">
-                  Para Mocup Suede
-                </div>
-                <div class="price">
-                  IDR 250,000
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product-item">
-            <div class="product-content">
-              <div class="image b100"></div>
-              <div class="clearfix"></div>
-              <div class="content">
-                <div class="title">
-                  Para Mocup Suede
-                </div>
-                <div class="price">
-                  IDR 250,000
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="product-item">
-            <div class="product-content">
-              <div class="image b100"></div>
-              <div class="clearfix"></div>
-              <div class="content">
-                <div class="title">
-                  Para Mocup Suede
-                </div>
-                <div class="price">
-                  IDR 250,000
+                  IDR {{ product.harga }}
                 </div>
               </div>
             </div>
