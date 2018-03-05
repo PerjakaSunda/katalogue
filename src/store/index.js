@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+import router from '../router'
 
 export const strict = false
 
@@ -50,6 +51,10 @@ export const actions = {
         )
         break
       case 'signOut':
+        firebase.auth().signOut().then(() => {
+          commit('Auth', 0)
+          router.replace({name: 'Home'})
+        })
         break
       case 'productLoad':
         break
