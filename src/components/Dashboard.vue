@@ -19,6 +19,9 @@
         <div class="dashboard-list">
           Add New
         </div>
+
+          <div class="clearfix"></div>
+
       </div>
       <div class="inner-dashboard-main">
         <div class="dashboard-content">

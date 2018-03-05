@@ -89,7 +89,7 @@ section > div {
     float: left;
     height: 100%;
     width: 300px;
-    padding: 34px 10px;
+    padding: 24px 10px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
@@ -112,7 +112,7 @@ section > div {
     float: left;
     height: auto;
     width: calc(100% - 300px);
-    padding:20px 10px;
+    padding: 10px 10px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
@@ -306,6 +306,8 @@ input.btn:hover {
         position: relative;
         height: auto;
         width: 100%;
+        margin-top: 10px;
+        padding: 10px;
     }
     .inner-body > .inner-dashboard-nav > .dashboard-list {
         float: left;
@@ -329,6 +331,8 @@ input.btn:hover {
         float: none;
         position: relative;
         width: 100%;
+        padding: 3px 0px;
+        margin-bottom: 5px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
     }
