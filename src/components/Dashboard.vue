@@ -6,9 +6,9 @@
       </div>
       <div
         class="item right"
-        @click="goSignOut()"
+        @click="$store.dispatch('Req', { action: 'signOut' })"
       >
-        LOGOUT
+        SIGNOUT
       </div>
     </div>
     <div class="inner-body dashboard">
