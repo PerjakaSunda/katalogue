@@ -86,18 +86,27 @@ section > div {
 
 /* INNER DASHBOARD */
 .inner-body > .inner-dashboard-nav {
-    float:left;
-    height:100%;
-    width:300px;
-    padding:20px 10px;
+    float: left;
+    height: 100%;
+    width: 300px;
+    padding: 34px 10px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
 .inner-body > .inner-dashboard-nav > .dashboard-list {
-    padding:10px;
-    margin-bottom:5px;
+    padding: 15px;
+    margin-bottom: 5px;
     cursor: pointer;
     text-align: left;
+    background: rgba(255,255,255,.02);
+    border-radius: 3px;
+}
+.inner-body > .inner-dashboard-nav > .dashboard-list:hover {
+    background: rgba(255,255,255,.05);
+}
+.inner-body > .inner-dashboard-nav > .dashboard-list.active {
+    background: rgba(255,255,255,.1);
+
 }
 .inner-body > .inner-dashboard-main {
     float: left;
@@ -108,7 +117,55 @@ section > div {
             box-sizing: border-box;
 }
 .inner-body > .inner-dashboard-main > .dashboard-content {
+    position: relative;
     padding:10px;
+}
+
+.dashboard-content > .product-item {
+    padding: 3px 7px;
+    float:left;
+    width: 25%;
+    position:relative;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.dashboard-content > .product-item > .product-content {
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.product-content > .image {
+    width: 100%;
+    display: block;
+    margin: 0;
+    background-position: center center;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    background: #fafafa;
+    background: rgba(255,255,255,.2);
+}
+.image.b100 {
+    padding-bottom: 99.9%;
+}
+.product-content > .content {
+    padding:10px;
+    background: #fafafa;
+    background: rgba(255,255,255,.05);
+}
+.product-content > .content > .title {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+.product-content > .content > .price {
+    font-size: 14px;
+    font-weight: 200;
+    padding: 5px 10px;
 }
 
 .navbar {
@@ -228,6 +285,15 @@ input.btn:hover {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
+}
+
+.clearfix:after,
+.clearfix:before{
+    display:table;
+    content:" ";
+}
+.clearfix:after{
+    clear:both;
 }
 
 @media (max-width: 768px) {

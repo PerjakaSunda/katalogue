@@ -13,7 +13,7 @@
     </div>
     <div class="inner-body dashboard">
       <div class="inner-dashboard-nav">
-        <div class="dashboard-list">
+        <div class="dashboard-list active">
           Products
         </div>
         <div class="dashboard-list">
@@ -22,7 +22,62 @@
       </div>
       <div class="inner-dashboard-main">
         <div class="dashboard-content">
-          Dashboard
+          <div class="product-item">
+            <div class="product-content">
+              <div class="image b100"></div>
+              <div class="clearfix"></div>
+              <div class="content">
+                <div class="title">
+                  Para Mocup Suede
+                </div>
+                <div class="price">
+                  IDR 250,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-content">
+              <div class="image b100"></div>
+              <div class="clearfix"></div>
+              <div class="content">
+                <div class="title">
+                  Para Mocup Suede
+                </div>
+                <div class="price">
+                  IDR 250,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-content">
+              <div class="image b100"></div>
+              <div class="clearfix"></div>
+              <div class="content">
+                <div class="title">
+                  Para Mocup Suede
+                </div>
+                <div class="price">
+                  IDR 250,000
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="product-content">
+              <div class="image b100"></div>
+              <div class="clearfix"></div>
+              <div class="content">
+                <div class="title">
+                  Para Mocup Suede
+                </div>
+                <div class="price">
+                  IDR 250,000
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
