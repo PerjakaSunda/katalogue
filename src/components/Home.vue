@@ -5,7 +5,7 @@
         <div class="inner-main">
           <h1 class="title"><span class="account">{{ $store.state.head.title }}</span></h1>
           <input
-            type="text"
+            type="email"
             placeholder="Username"
             class="input"
             v-model="$store.state.user.email"

@@ -48,6 +48,7 @@ export const actions = {
     switch (params.action) {
       case 'firstLoad':
         let authenticated = await firebase.auth().currentUser
+        commit('Auth', 1)
         return authenticated
       case 'signIn':
         let resLog = {}
