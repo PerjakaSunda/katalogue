@@ -7,12 +7,16 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+const storeData = require('./store')
+const store = new Vuex.Store(storeData)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
