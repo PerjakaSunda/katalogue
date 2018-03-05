@@ -27,7 +27,7 @@
         </div>
         <div class="popup-add-product" v-show="$store.state.products_new_popup">
           <input type="text" class="add-product" placeholder="Name" v-model="$store.state.products_new.nama">
-          <input type="text" class="add-product" placeholder="Price" v-model="$store.state.products_new.harga">
+          <input type="number" class="add-product" placeholder="Price" v-model="$store.state.products_new.harga">
           <input type="number" class="add-product" placeholder="Stock" v-model="$store.state.products_new.stock">
           <select type="text" class="add-product" v-model="$store.state.products_new.jenis">
             <option value="" disabled>Select Type</option>
@@ -83,9 +83,9 @@ export default {
       const _self = this
       if (_self.$store.state.products_new.nama === '') {
         alert('Product name is empty')
-      } else if (parseInt(_self.$store.state.products_new.harga) <= 1000) {
+      } else if (_self.$store.state.products_new.harga <= 1000) {
         alert('Invalid price')
-      } else if (parseInt(_self.$store.state.products_new.stock) <= 0) {
+      } else if (_self.$store.state.products_new.stock <= 0) {
         alert('Add stock')
       } else if (_self.$store.state.products_new.jenis === '') {
         alert('Select product type')
