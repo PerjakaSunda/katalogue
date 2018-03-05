@@ -87,6 +87,7 @@ section > div {
 /* INNER DASHBOARD */
 .inner-body > .inner-dashboard-nav {
     float: left;
+    position: relative;
     height: 100%;
     width: 300px;
     padding: 24px 10px;
@@ -94,6 +95,7 @@ section > div {
             box-sizing: border-box;
 }
 .inner-body > .inner-dashboard-nav > .dashboard-list {
+    position: relative;
     padding: 15px;
     margin-bottom: 5px;
     cursor: pointer;
@@ -119,6 +121,16 @@ section > div {
 .inner-body > .inner-dashboard-main > .dashboard-content {
     position: relative;
     padding:10px;
+}
+.popup-add-product {
+    position: absolute;
+    top: 135px;
+    left:0px;
+    width: 100%;
+    padding: 10px;
+    z-index: 10;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .dashboard-content > .product-item {
@@ -214,7 +226,7 @@ section > div {
     background: rgba(0,0,0,.5);
 }
 
-input {
+input, select {
     outline: none;
     padding: 15px 18px;
     font-size:16px;
@@ -243,7 +255,7 @@ input.btn {
     cursor: pointer;
     font-size: 12px;
 }
-input.input {
+input.input, input.add-product, select.add-product {
     font-weight: 200;
     color: #D0D0D0;
     width: 100%;
@@ -254,6 +266,9 @@ input.input {
     letter-spacing: 1.2px;
     -webkit-box-shadow: inset -2px 1px -3px rgba(0,0,0,.7);
             box-shadow: inset -2px 1px -3px rgba(0,0,0,.7);
+}
+input.add-product, select.add-product {
+    text-align: left!important;
 }
 input.btn {
     border: none;
@@ -276,7 +291,7 @@ input.btn:hover {
 
 .shadow-dark {
     -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
-        box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+            box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -335,6 +350,10 @@ input.btn:hover {
         margin-bottom: 5px;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
+    }
+    .popup-add-product {
+        background: rgba(0,0,0,.95);
+        top: 75px;
     }
     #loader{
         position: relative;

@@ -1,5 +1,6 @@
 import { firebase } from '../firebase/index.js'
 import router from '../router'
+let Products = firebase.database().ref('products')
 
 export const strict = false
 
@@ -14,7 +15,15 @@ export const state = () => ({
     email: '',
     password: ''
   },
-  products: []
+  products: [],
+  products_new_popup: false,
+  products_new: {
+    nama: '',
+    harga: null,
+    jenis: '',
+    stock: null,
+    image: 'asdw'
+  }
 })
 
 export const mutations = {
@@ -78,6 +87,7 @@ export const actions = {
         })
         break
       case 'productAdd':
+        Products.push(state.products_new)
         break
       case 'productUpdate':
         break
