@@ -301,6 +301,37 @@ input.btn:hover {
         margin: 0px auto;
         width: 85%;
     }
+    .inner-body > .inner-dashboard-nav {
+        float: none;
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+    .inner-body > .inner-dashboard-nav > .dashboard-list {
+        float: left;
+        width: 50%;
+        padding: 15px;
+        margin-bottom: 0px;
+        text-align: center;
+        border-radius: 0px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+    .inner-body > .inner-dashboard-main {
+        float: none;
+        position: relative;
+        width: 100%;
+    }
+    .inner-body > .inner-dashboard-main > .dashboard-content {
+        padding: 0px;
+    }
+    .dashboard-content > .product-item {
+        float: none;
+        position: relative;
+        width: 100%;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+    }
     #loader{
         position: relative;
         height: 10vw!important;
