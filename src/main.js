@@ -4,9 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 import './assets/css/style.css'
 
 Vue.use(Vuex)
+Vue.use(VueAxios, axios)
 
 const storeData = require('./store')
 const store = new Vuex.Store(storeData)
