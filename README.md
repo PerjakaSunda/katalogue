@@ -2,6 +2,9 @@
 > Simple product manager (Vue + Firebase) From Scratch ...
 >> Production folder ./docs
 
+## Admin Login
+>> email: admin@dot.co.id & password: dot.admin
+
 ## Build Setup
 
 ``` bash
