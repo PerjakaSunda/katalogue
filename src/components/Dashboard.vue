@@ -26,10 +26,29 @@
           Add New
         </div>
         <div class="popup-add-product" v-show="$store.state.products_new_popup">
-          <input type="text" class="add-product" placeholder="Name" v-model="$store.state.products_new.nama">
-          <input type="number" class="add-product" placeholder="Price" v-model="$store.state.products_new.harga">
-          <input type="number" class="add-product" placeholder="Stock" v-model="$store.state.products_new.stock">
-          <select type="text" class="add-product" v-model="$store.state.products_new.jenis">
+          <input
+            type="text"
+            class="add-product"
+            placeholder="Name"
+            v-model="$store.state.products_new.nama"
+          >
+          <input
+            type="number"
+            class="add-product"
+            placeholder="Price"
+            v-model="$store.state.products_new.harga"
+          >
+          <input
+            type="number"
+            class="add-product"
+            placeholder="Stock"
+            v-model="$store.state.products_new.stock"
+          >
+          <select
+            type="text"
+            class="add-product"
+            v-model="$store.state.products_new.jenis"
+          >
             <option value="" disabled>Select Type</option>
             <option value="Shoes">Shoes</option>
             <option value="Tops">Tops</option>
@@ -38,9 +57,15 @@
           <input
             type="file"
             class="add-product"
+            accept="image/x-png,image/gif,image/jpeg"
             @change="$store.dispatch('Req', {action: 'imageUpload', e: $event})"
           >
-          <input type="button" class="btn" value="Add product" @click="addNewProduct()">
+          <input
+            type="button"
+            class="btn"
+            value="Add product"
+            @click="addNewProduct()"
+          >
         </div>
 
         <div class="clearfix"></div>
