@@ -1,6 +1,7 @@
 import { firebase } from '../firebase/index.js'
 import router from '../router'
 let Products = firebase.database().ref('products')
+let imageStorage = firebase.storage().ref()
 
 export const strict = false
 
@@ -22,7 +23,7 @@ export const state = () => ({
     harga: null,
     jenis: '',
     stock: null,
-    image: 'asdw'
+    image: null
   }
 })
 
@@ -47,7 +48,7 @@ export const mutations = {
       harga: null,
       jenis: '',
       stock: null,
-      image: ''
+      image: null
     }
   }
 }
@@ -103,6 +104,22 @@ export const actions = {
         break
       case 'productDelete':
         Products.child(params.key).remove()
+        break
+      case 'imageUpload':
+        commit('Loading')
+        let f = params.e.target.files
+        if (f) {
+          let isRef = imageStorage.child('1.jpg')
+          isRef.put(f[0]).then(function (snapshot) {
+            state.products_new.image = snapshot.downloadURL
+            commit('Loading', 'hide')
+          })
+        } else {
+          state.products_new.image = null
+          commit('Loading', 'hide')
+        }
+        break
+      default:
         break
     }
   }

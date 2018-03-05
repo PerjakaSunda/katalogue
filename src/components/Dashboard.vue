@@ -35,7 +35,11 @@
             <option value="Tops">Tops</option>
             <option value="Bottoms">Bottoms</option>
           </select>
-          <input type="file" class="add-product" placeholder="Stock">
+          <input
+            type="file"
+            class="add-product"
+            @change="$store.dispatch('Req', {action: 'imageUpload', e: $event})"
+          >
           <input type="button" class="btn" value="Add product" @click="addNewProduct()">
         </div>
 
@@ -89,7 +93,7 @@ export default {
         alert('Add stock')
       } else if (_self.$store.state.products_new.jenis === '') {
         alert('Select product type')
-      } else if (_self.$store.state.products_new.image === '') {
+      } else if (!_self.$store.state.products_new.image || _self.$store.state.products_new.image === '') {
         alert('Add product photo')
       } else {
         _self.$store.dispatch('Req', { action: 'productAdd' })
