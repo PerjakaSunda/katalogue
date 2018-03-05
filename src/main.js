@@ -32,5 +32,14 @@ new Vue({
       _self.$store.state.products = snapshot.val()
     })
     _self.$store.dispatch('Req', { action: 'firstLoad' })
+  },
+  watch: {
+    '$route' (to, from) {
+      const _self = this
+      const products = firebase.database().ref('products')
+      products.on('value', function (snapshot) {
+        _self.$store.state.products = snapshot.val()
+      })
+    }
   }
 })
