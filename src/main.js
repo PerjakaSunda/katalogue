@@ -23,5 +23,17 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  created () {
+    const _self = this
+    _self.$store.dispatch('Req', { action: 'firstLoad' }).then(function (res) {
+      if (res) {
+        _self.$store.commit('Auth', 1)
+        router.replace({ name: 'Dashboard' })
+      } else {
+        _self.$store.commit('Auth', 0)
+        router.replace({ name: 'Home' })
+      }
+    })
+  }
 })

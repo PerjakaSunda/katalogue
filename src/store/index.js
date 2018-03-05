@@ -46,6 +46,9 @@ export const mutations = {
 export const actions = {
   async Req ({ dispatch, commit, state }, params) {
     switch (params.action) {
+      case 'firstLoad':
+        let authenticated = await firebase.auth().currentUser
+        return authenticated
       case 'signIn':
         await firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
           function (user) {
