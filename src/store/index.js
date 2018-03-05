@@ -47,9 +47,15 @@ export const actions = {
   async Req ({ dispatch, commit, state }, params) {
     switch (params.action) {
       case 'firstLoad':
-        let authenticated = await firebase.auth().currentUser
-        commit('Auth', 1)
-        return authenticated
+        await firebase.auth().onAuthStateChanged(function (user) {
+          if (user) {
+            commit('Auth', 1)
+            router.replace({name: 'Dashboard'})
+          } else {
+            commit('Auth', 0)
+          }
+        })
+        break
       case 'signIn':
         let resLog = {}
         await firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
