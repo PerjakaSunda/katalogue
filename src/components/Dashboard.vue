@@ -89,21 +89,3 @@
     </div>
   </section>
 </template>
-
-<script>
-export default {
-  name: 'Dashboard',
-  data () {
-    return {
-    }
-  },
-  methods: {
-    goSignOut () {
-      this.$router.replace({name: 'Home'})
-    }
-  }
-}
-</script>
-
-<style scoped>
-</style>
