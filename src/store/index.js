@@ -40,6 +40,15 @@ export const mutations = {
     } else {
       state.user.auth = false
     }
+  },
+  ClearProductAdd (state) {
+    state.products_new = {
+      nama: '',
+      harga: null,
+      jenis: '',
+      stock: null,
+      image: ''
+    }
   }
 }
 
@@ -88,6 +97,7 @@ export const actions = {
         break
       case 'productAdd':
         Products.push(state.products_new)
+        commit('ClearProductAdd')
         break
       case 'productUpdate':
         break
