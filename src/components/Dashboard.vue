@@ -13,7 +13,10 @@
     </div>
     <div class="inner-body dashboard">
       <div class="inner-dashboard-nav">
-        <div class="dashboard-list active">
+        <div
+          class="dashboard-list active"
+          @click="$store.state.products_new_popup = false"
+        >
           Products
         </div>
         <div
