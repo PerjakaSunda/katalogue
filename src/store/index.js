@@ -77,10 +77,6 @@ export const actions = {
           commit('Loading', 'hide')
         })
         break
-      case 'productLoad':
-        break
-      case 'productGet':
-        break
       case 'productAdd':
         break
       case 'productUpdate':
