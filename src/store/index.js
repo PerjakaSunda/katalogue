@@ -17,16 +17,37 @@ export const state = () => ({
   isMobile: false,
   head: {
     title: 'KATALOGUE'
+  },
+  user: {
+    auth: false,
+    email: 'admin@dot.co.id',
+    password: 'dot.admin'
   }
 })
 
 export const mutations = {
+  Auth (state, act) {
+    if (act === 1) {
+      state.user.auth = true
+    } else {
+      state.user.auth = false
+    }
+  }
 }
 
 export const actions = {
   async Req ({ dispatch, commit, state }, params) {
     switch (params.action) {
       case 'signIn':
+        firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
+          function (user) {
+            commit('Auth', 1)
+          },
+          function (err) {
+            commit('Auth', 0)
+            console.log(err)
+          }
+        )
         break
       case 'signOut':
         break
