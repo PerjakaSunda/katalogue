@@ -34,7 +34,7 @@ export const actions = {
         break
       case 'productGet':
         break
-      case 'productSave':
+      case 'productAdd':
         break
       case 'productUpdate':
         break
