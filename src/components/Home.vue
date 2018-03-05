@@ -6,7 +6,7 @@
           <h1 class="title"><span class="account">{{ $store.state.head.title }}</span></h1>
           <input
             type="email"
-            placeholder="Username"
+            placeholder="Email"
             class="input"
             v-model="$store.state.user.email"
             required
