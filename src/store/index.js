@@ -102,6 +102,7 @@ export const actions = {
       case 'productUpdate':
         break
       case 'productDelete':
+        Products.child(params.key).remove()
         break
     }
   }

@@ -45,6 +45,12 @@
             v-for="(product, index) in $store.state.products"
             :key="index">
             <div class="product-content">
+              <span
+                class="remove"
+                @click="$store.dispatch('Req', {action: 'productDelete', key: index})"
+              >
+                Remove
+              </span>
               <div class="image b100" :style="{'background-image': 'url(' + product.image + ')'}"></div>
               <div class="clearfix"></div>
               <div class="content">
