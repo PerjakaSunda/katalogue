@@ -109,7 +109,7 @@ export const actions = {
         commit('Loading')
         let f = params.e.target.files
         if (f) {
-          let isRef = imageStorage.child('1.jpg')
+          let isRef = imageStorage.child(Date.now() + '.jpg')
           isRef.put(f[0]).then(function (snapshot) {
             state.products_new.image = snapshot.downloadURL
             commit('Loading', 'hide')
