@@ -1,5 +1,5 @@
 # Simple Product Manager (Vue + Firebase)
-> Simple product manager (Vue + Firebase)
+> Simple product manager (Vue + Firebase) From Scratch ...
 
 ## Build Setup
 
