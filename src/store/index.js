@@ -27,6 +27,13 @@ export const state = () => ({
 })
 
 export const mutations = {
+  Loading (state, act) {
+    if (act === 'hide') {
+      state.loading = false
+    } else {
+      state.loading = true
+    }
+  },
   Auth (state, act) {
     if (act === 1) {
       state.user.auth = true
@@ -40,7 +47,7 @@ export const actions = {
   async Req ({ dispatch, commit, state }, params) {
     switch (params.action) {
       case 'signIn':
-        firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
+        await firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
           function (user) {
             commit('Auth', 1)
           },
@@ -51,7 +58,7 @@ export const actions = {
         )
         break
       case 'signOut':
-        firebase.auth().signOut().then(() => {
+        await firebase.auth().signOut().then(() => {
           commit('Auth', 0)
           router.replace({name: 'Home'})
         })
