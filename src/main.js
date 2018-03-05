@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import './assets/css/style.css'
 
 Vue.use(Vuex)
 
