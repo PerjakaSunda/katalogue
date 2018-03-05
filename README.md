@@ -1,5 +1,6 @@
 # Simple Product Manager (Vue + Firebase)
 > Simple product manager (Vue + Firebase) From Scratch ...
+>> Production folder ./docs
 
 ## Build Setup
 
