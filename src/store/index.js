@@ -55,11 +55,15 @@ export const actions = {
         await firebase.auth().signInWithEmailAndPassword(state.user.email, state.user.password).then(
           function (user) {
             commit('Auth', 1)
-            resLog = {status: true, message: ''}
+            resLog = { status: true, message: '' }
           },
           function (err) {
             commit('Auth', 0)
-            resLog = {status: false, message: err.message}
+            if (err.code === 'auth/user-not-found') {
+              resLog = { status: false, message: 'User not found.' }
+            } else {
+              resLog = { status: false, message: err.message }
+            }
           }
         )
         return resLog
