@@ -46,6 +46,9 @@ section > div {
     width: 100%;
     height: 100%;
 }
+.bg-body > .inner-body.dashboard {
+    padding-top: 62px;
+}
 .bg-body > .inner-body > .inner {
     display: table-cell;
     text-align: center;
@@ -80,6 +83,80 @@ section > div {
 .inner-main > h1.title > span::after {
     content: "Dot App";
 }
+
+/* INNER DASHBOARD */
+.inner-body > .inner-dashboard-nav {
+    float:left;
+    height:100%;
+    width:300px;
+    padding:20px 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.inner-body > .inner-dashboard-nav > .dashboard-list {
+    padding:10px;
+    margin-bottom:5px;
+    cursor: pointer;
+    text-align: left;
+}
+.inner-body > .inner-dashboard-main {
+    float: left;
+    height: auto;
+    width: calc(100% - 300px);
+    padding:20px 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.inner-body > .inner-dashboard-main > .dashboard-content {
+    padding:10px;
+}
+
+.navbar {
+    position: fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:60px;
+    text-align: left;
+    z-index: 100;
+    background: #034450;
+    background: rgba(3, 68, 80, .8);
+}
+.navbar > .item {
+    padding: 21px;
+    display: inline-block;
+    letter-spacing: 1px;
+    font-weight: 600;
+    width: 150px;
+    margin: 0;
+    text-align: center;
+    margin-top: -5px;
+    -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.navbar > .item > span {
+    position: relative;
+}
+.navbar > .item > span::after {
+    content: 'Dot App';
+    position: absolute;
+    color: #bbb;
+    right: 0px;
+    bottom: -10px;
+    font-size: 10px;
+    font-weight: 200;
+}
+.navbar > .item.right {
+    width: 130px;
+    margin-top: 0px;
+    background: rgba(0,0,0,.3);
+    float: right;
+    cursor: pointer;
+}
+.navbar > .item.right:hover {
+    background: rgba(0,0,0,.5);
+}
+
 input {
     outline: none;
     padding: 15px 18px;
@@ -138,6 +215,11 @@ input.btn {
 
 input.btn:hover {
     background: rgba(255,30,30,.75);
+}
+
+.shadow-dark {
+    -webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+        box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 }
 
 .fade-enter-active, .fade-leave-active {

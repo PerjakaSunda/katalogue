@@ -3,7 +3,7 @@
     <div class="inner-body">
       <div class="inner">
         <div class="inner-main">
-          <h1 class="title"><span class="account">KATALOGUE</span></h1>
+          <h1 class="title"><span class="account">{{ $store.state.head.title }}</span></h1>
           <input
             type="text"
             placeholder="Username"
